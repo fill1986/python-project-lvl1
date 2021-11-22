@@ -25,6 +25,8 @@ jobs:
         uses: hexlet/project-action@release
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}
-      - name: Cheked Linter
+      - name: Install dependencies
         run: |
-          make lint
+          pip install poetry
+          make install
+
