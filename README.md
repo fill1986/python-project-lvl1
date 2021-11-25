@@ -5,4 +5,4 @@
 ---
 ### Установка и запуск игры brain-even
 
-[![asciicast](https://asciinema.org/a/CUglaEF4kp8hDYnVJ9SS3x9NO.svg)](https://asciinema.org/a/CUglaEF4kp8hDYnVJ9SS3x9NO)
+<a href="https://asciinema.org/a/CUglaEF4kp8hDYnVJ9SS3x9NO" target="_blank"><img src="https://asciinema.org/a/CUglaEF4kp8hDYnVJ9SS3x9NO.svg" /></a>
