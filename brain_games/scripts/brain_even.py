@@ -13,7 +13,6 @@ def main():
         return 'no'
 
     def game_even():
-        print("Welcome to the Brain Games")
         name_player = welcome_user()
         win_value = 0
         while win_value != 3:
