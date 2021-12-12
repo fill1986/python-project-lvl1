@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 import random
-from brain_games.cli import welcome_user
-import prompt
+from brain_games.engine import engine
+
+rules_game = 'Find the greatest common divisor of given numbers.'
 
 
 def gsd(value_1, value_2):
@@ -14,29 +15,19 @@ def gsd(value_1, value_2):
     return value_1
 
 
+def generate_Question_Answer():
+    first_value_range = 1
+    second_value_range = 20
+    value_1 = random.randint(first_value_range, second_value_range)
+    value_2 = random.randint(first_value_range, second_value_range)
+    answer = gsd(value_1, value_2)
+
+    return (f"{value_1} and {value_2}", answer)
+
+
 def main():
 
-    def game_calulator():
-        name_player = welcome_user()
-        win_value = 0
-        while win_value != 3:
-            print('Find the greatest common divisor of given numbers.')
-            operand_1 = random.randint(1, 10)
-            operand_2 = random.randint(1, 10)
-            answer = gsd(operand_1, operand_2)
-            print(f'Question: {operand_1} and {operand_2}')
-            answer_user = prompt.integer('Your answer: ')
-
-            if answer != answer_user:
-                print(f"{answer_user} is wrong answer ;(. Correct {answer}")
-                print(f"Let's try again, {name_player}")
-                return 0
-            print('Correct!')
-            win_value += 1
-
-        print(f'Congratulations, {name_player}')
-
-    game_calulator()
+    engine(generate_Question_Answer, rules_game)
 
 
 if __name__ == '__main__':

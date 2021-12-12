@@ -1,47 +1,34 @@
 #!/usr/bin/env python
 
 import random
-from brain_games.cli import welcome_user
-import prompt
+from brain_games.engine import engine
 
 
-def summa(value_1, value_2):
-    return ('+', value_1 + value_2)
+rules_game = 'What is the result of the expression?'
 
 
-def difference(value_1, value_2):
-    return ('-', value_1 - value_2)
+def generate_Question_Answer():
+    signs = ['-', '+', '*']
+    first_sign = 0
+    last_sign = len(signs) - 1
+    random_sign = random.randint(first_sign, last_sign)
 
+    first_value_range = 1
+    second_value_range = 10
+    operand_1 = random.randint(first_value_range, second_value_range)
+    operand_2 = random.randint(first_value_range, second_value_range)
 
-def multiplication(value_1, value_2):
-    return ('*', value_1 * value_2)
+    if signs[random_sign] == '-':
+        return (f'{operand_1} - {operand_2}', operand_1 - operand_2)
+    elif signs[random_sign] == '+':
+        return (f'{operand_1} + {operand_2}', operand_1 + operand_2)
+    elif signs[random_sign] == '*':
+        return (f'{operand_1} * {operand_2}', operand_1 * operand_2)
 
 
 def main():
-    def game_calulator():
-        name_player = welcome_user()
-        win_value = 0
-        while win_value != 3:
-            print('What is the result of the expression?')
-            for operation in [summa, difference, multiplication]:
-                operand_1 = random.randint(1, 10)
-                operand_2 = random.randint(1, 10)
-                question = operation(operand_1, operand_2)
-                sign = question[0]
-                answer = question[1]
-                print(f'Question: {operand_1} {sign} {operand_2}')
-                answer_user = prompt.integer('Your answer: ')
 
-                if answer != answer_user:
-                    print(f"{answer_user} is wrong answer ;(. Correct {answer}")
-                    print(f"Let's try again, {name_player}")
-                    return 0
-                print('Correct!')
-                win_value += 1
-
-        print(f'Congratulations, {name_player}')
-
-    game_calulator()
+    engine(generate_Question_Answer, rules_game)
 
 
 if __name__ == '__main__':

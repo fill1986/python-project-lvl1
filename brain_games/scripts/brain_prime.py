@@ -2,8 +2,9 @@
 
 from math import sqrt
 import random
-from brain_games.cli import welcome_user
-import prompt
+from brain_games.engine import engine
+
+rules_game = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_prime(value):
@@ -17,28 +18,17 @@ def is_prime(value):
     return 'yes'
 
 
+def generate_Question_Answer():
+    first_value_range = 1
+    second_value_range = 100
+    quetion = random.randint(first_value_range, second_value_range)
+    answer = is_prime(quetion)
+    return (quetion, answer)
+
+
 def main():
-    rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
-    def game_prime():
-        name_player = welcome_user()
-        win_value = 0
-        while win_value != 3:
-            print(rules)
-            quetion = random.randint(1, 100)
-            print(f'Question: {quetion}')
-            answer = prompt.string('Your answer: ')
-            true_answer = is_prime(quetion)
-
-            if true_answer != answer:
-                print(f"'{quetion} is wrong answer ;(. Correct answer was 'no'")
-                return 0
-            print('Correct!')
-            win_value += 1
-
-        print(f'Congratulations, {name_player}')
-
-    game_prime()
+    engine(generate_Question_Answer, rules_game)
 
 
 if __name__ == '__main__':
