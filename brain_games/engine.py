@@ -11,6 +11,7 @@ def cheak_answer(answer, user_answer):
 def engine(get_Question_Answer, rules_game):
     count_rounds = 3
     name_player = welcome_user()
+    print(f'Hello, {name_player}!')
     print(rules_game)
 
     while count_rounds > 0:
