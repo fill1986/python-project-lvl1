@@ -22,7 +22,7 @@ def generate_Question_Answer():
     value_2 = random.randint(first_value_range, second_value_range)
     answer = gsd(value_1, value_2)
 
-    return (f"{value_1} and {value_2}", answer)
+    return (f"{value_1} {value_2}", answer)
 
 
 def main():
