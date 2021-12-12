@@ -20,10 +20,10 @@ def engine(get_Question_Answer, rules_game):
         user_answer = prompt.string('Your answer: ')
 
         if cheak_answer(answer, user_answer):
-            print('Correct')
+            print('Correct!')
             count_rounds -= 1
         else:
-            print(f"{user_answer} is wrong answer ;(. Correct answer was {answer}")
+            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{answer}'.")
             print(f"Let's try again, {name_player}!")
             return 0
 
