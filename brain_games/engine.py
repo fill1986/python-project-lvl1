@@ -23,6 +23,7 @@ def engine(get_Question_Answer, rules_game):
             count_rounds -= 1
         else:
             print(f"{user_answer} is wrong answer ;(. Correct answer was {answer}")
+            print(f"Let's try again, {name_player}!")
             return 0
 
     print(f'Congratulations, {name_player}!')
