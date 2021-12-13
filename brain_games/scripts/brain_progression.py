@@ -18,11 +18,13 @@ def generate_Question_Answer():
 
     while i <= 10:
         if i == lost_position_progression:
-            progression += ' ..'
+            progression += '..'
             answer = str(current_value_progression)
         else:
-            progression += f' {current_value_progression}'
+            progression += f'{current_value_progression}'
         current_value_progression += step_progression
+        if i != 11:
+            progression += " "
         i += 1
 
     return (progression, answer)
