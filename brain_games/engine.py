@@ -23,7 +23,8 @@ def engine(get_Question_Answer, rules_game):
             print('Correct!')
             count_rounds -= 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{answer}'.")
+            msg_wrong_answer = 'is wrong answer ;(. Correct answer was'
+            print(f"'{user_answer}' {msg_wrong_answer} '{answer}'.")
             print(f"Let's try again, {name_player}!")
             return 0
 
