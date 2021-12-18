@@ -5,7 +5,7 @@ from brain_games.engine import engine
 
 
 rules_game = 'What number is missing in the progression?'
-
+legth_progression = 10
 
 def generate_progression(first, step, length):
     progression = ()
@@ -20,13 +20,13 @@ def generate_progression(first, step, length):
 def get_progression():
     first_value = random.randint(1, 10)
     step = random.randint(1, 10)
-    length = 10
+    length = legth_progression
 
     return generate_progression(first_value, step, length)
 
 
 def generate_Question_Answer():
-    lost_position_progression = random.randint(1, 10)
+    lost_position_progression = random.randint(1, legth_progression - 1)
     tuple_progression = get_progression()
     str_progression = ''
     answer = lost_position_progression
