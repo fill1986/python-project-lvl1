@@ -7,6 +7,7 @@ from brain_games.engine import engine
 rules_game = 'What number is missing in the progression?'
 legth_progression = 10
 
+
 def generate_progression(first, step, length):
     progression = ()
 
