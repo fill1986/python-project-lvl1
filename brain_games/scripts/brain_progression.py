@@ -7,31 +7,43 @@ from brain_games.engine import engine
 rules_game = 'What number is missing in the progression?'
 
 
+def generate_progression(first, step, length):
+    progression = ()
+
+    while len(progression) < length:
+        progression += (first, )
+        first += step
+
+    return progression
+
+
+def get_progression():
+    first_value = random.randint(1, 10)
+    step = random.randint(1, 10)
+    length = 10
+
+    return generate_progression(first_value, step, length)
+
+
 def generate_Question_Answer():
-    first_value_progression = random.randint(1, 10)
-    current_value_progression = first_value_progression
-    step_progression = random.randint(1, 10)
     lost_position_progression = random.randint(1, 10)
-    progression = ''
-    answer = 0
-    i = 0
+    tuple_progression = get_progression()
+    str_progression = ''
+    answer = lost_position_progression
 
-    while i <= 10:
-        if i == lost_position_progression:
-            progression += '..'
-            answer = str(current_value_progression)
+    for (index, item) in enumerate(tuple_progression):
+        if index == lost_position_progression:
+            str_progression += '..'
+            answer = item
         else:
-            progression += f'{current_value_progression}'
-        current_value_progression += step_progression
-        if i != 11:
-            progression += " "
-        i += 1
+            str_progression += f'{str(item)}'
+        if index != len(tuple_progression) - 1:
+            str_progression += " "
 
-    return (progression, answer)
+    return (str_progression, answer)
 
 
 def main():
-
     engine(generate_Question_Answer, rules_game)
 
 

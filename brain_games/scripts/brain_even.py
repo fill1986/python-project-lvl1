@@ -8,15 +8,15 @@ rules_game = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 def is_even(value):
     if value % 2 == 0:
-        return 'yes'
-    return 'no'
+        return True
+    return False
 
 
 def generate_Question_Answer():
     first_value_range = 1
     second_value_range = 100
     quetion = random.randint(first_value_range, second_value_range)
-    answer = is_even(quetion)
+    answer = 'yes' if is_even(quetion) else 'no'
     return (quetion, answer)
 
 
