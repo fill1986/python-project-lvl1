@@ -7,6 +7,9 @@ packages = [
   { include = "brain_games" },
 ]
 repository = "https://github.com/fill1986/python-project-lvl1"
+classifiers = [
+	"Topics :: Cli games"
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
