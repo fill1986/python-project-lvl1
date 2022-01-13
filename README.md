@@ -5,14 +5,15 @@
 ---
 ### Install and run cli games
 Copy files from git and to install:
-'''
+```
 git clone https://github.com/fill1986/python-project-lvl1 OurDirectory/
 cd OurDirectory
 make install
 make build
 make publish
 make package-install
-'''
+```
+
 Install:
 <a href="https://asciinema.org/a/8AzRy3c5vmNop8fwpZ8K1nJvg" target="_blank"><img src="https://asciinema.org/a/8AzRy3c5vmNop8fwpZ8K1nJvg.svg" /></a>
 
