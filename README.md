@@ -14,7 +14,8 @@ make publish
 make package-install
 ```
 
-Install:
+Demonstration installation:
+
 <a href="https://asciinema.org/a/8AzRy3c5vmNop8fwpZ8K1nJvg" target="_blank"><img src="https://asciinema.org/a/8AzRy3c5vmNop8fwpZ8K1nJvg.svg" /></a>
 
 
