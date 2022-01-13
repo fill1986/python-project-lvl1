@@ -1,12 +1,11 @@
-#!/usr/bin/env python
-
 import random
-from brain_games.engine import engine
 
-rules_game = 'Find the greatest common divisor of given numbers.'
+RULES_GAME = 'Find the greatest common divisor of given numbers.'
+LOWER_BOUND = 1
+UPPER_BOUND = 20
 
 
-def gsd(value_1, value_2):
+def calculate_gcd(value_1, value_2):
     while value_1 != value_2:
         if value_1 > value_2:
             value_1 = value_1 - value_2
@@ -15,16 +14,9 @@ def gsd(value_1, value_2):
     return value_1
 
 
-def generate_Question_Answer():
-    first_value_range = 1
-    second_value_range = 20
-    value_1 = random.randint(first_value_range, second_value_range)
-    value_2 = random.randint(first_value_range, second_value_range)
-    answer = gsd(value_1, value_2)
+def generate_question_answer():
+    value_1 = random.randint(LOWER_BOUND, UPPER_BOUND)
+    value_2 = random.randint(LOWER_BOUND, UPPER_BOUND)
+    answer = calculate_gcd(value_1, value_2)
 
-    return (f"{value_1} {value_2}", answer)
-
-
-def to_start():
-
-    engine(generate_Question_Answer, rules_game)
+    return f"{value_1} {value_2}", answer

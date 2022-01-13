@@ -1,31 +1,21 @@
-#!/usr/bin/env python
-
 import random
-from brain_games.engine import engine
+
+UPPER_BOUND = 1
+LOWER_BOUND = 10
 
 
-rules_game = 'What is the result of the expression?'
-
-
-def generate_Question_Answer():
+def generate_question_answer():
     signs = ['-', '+', '*']
-    first_sign = 0
-    last_sign = len(signs) - 1
-    random_sign = random.randint(first_sign, last_sign)
+    sign = random.choice(signs)
 
-    first_value_range = 1
-    second_value_range = 10
-    operand_1 = random.randint(first_value_range, second_value_range)
-    operand_2 = random.randint(first_value_range, second_value_range)
+    UPPER_BOUND = 1
+    LOWER_BOUND = 10
+    operand_1 = random.randint(UPPER_BOUND, LOWER_BOUND)
+    operand_2 = random.randint(UPPER_BOUND, LOWER_BOUND)
 
-    if signs[random_sign] == '-':
-        return (f'{operand_1} - {operand_2}', operand_1 - operand_2)
-    elif signs[random_sign] == '+':
-        return (f'{operand_1} + {operand_2}', operand_1 + operand_2)
-    elif signs[random_sign] == '*':
-        return (f'{operand_1} * {operand_2}', operand_1 * operand_2)
-
-
-def to_start():
-
-    engine(generate_Question_Answer, rules_game)
+    if sign == '-':
+        return f'{operand_1} - {operand_2}', operand_1 - operand_2
+    elif sign == '+':
+        return f'{operand_1} + {operand_2}', operand_1 + operand_2
+    elif sign == '*':
+        return f'{operand_1} * {operand_2}', operand_1 * operand_2

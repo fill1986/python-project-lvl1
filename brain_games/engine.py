@@ -1,31 +1,26 @@
 import prompt
 from brain_games.cli import welcome_user
 
-
-def cheak_answer(answer, user_answer):
-    if str(answer) == user_answer:
-        return True
-    return False
+ROUNDS_COUNT = 3
 
 
-def engine(get_Question_Answer, rules_game):
-    count_rounds = 3
-    name_player = welcome_user()
-    print(f'Hello, {name_player}!')
+def start_game(get_question_answer, rules_game):
+    ROUNDS_COUNT = 3
+    player_name = welcome_user()
+    print(f'Hello, {player_name}!')
     print(rules_game)
 
-    while count_rounds > 0:
-        question, answer = get_Question_Answer()
+    for n in range(ROUNDS_COUNT):
+        question, answer = get_question_answer()
         print(f'Question: {question}')
         user_answer = prompt.string('Your answer: ')
 
-        if cheak_answer(answer, user_answer):
+        if str(answer) == user_answer:
             print('Correct!')
-            count_rounds -= 1
         else:
             msg_wrong_answer = 'is wrong answer ;(. Correct answer was'
             print(f"'{user_answer}' {msg_wrong_answer} '{answer}'.")
-            print(f"Let's try again, {name_player}!")
-            return 0
+            print(f"Let's try again, {player_name}!")
+            return
 
-    print(f'Congratulations, {name_player}!')
+    print(f'Congratulations, {player_name}!')
