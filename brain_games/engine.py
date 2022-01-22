@@ -4,11 +4,9 @@ from brain_games.cli import welcome_user
 ROUNDS_COUNT = 3
 
 
-def start_game(get_question_answer, rules_game):
-    ROUNDS_COUNT = 3
+def start_game(get_question_answer, game_rules):
     player_name = welcome_user()
-    print(f'Hello, {player_name}!')
-    print(rules_game)
+    print(game_rules)
 
     for n in range(ROUNDS_COUNT):
         question, answer = get_question_answer()

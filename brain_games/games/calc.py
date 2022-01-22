@@ -2,14 +2,12 @@ import random
 
 UPPER_BOUND = 1
 LOWER_BOUND = 10
+GAME_RULES = 'What is the result of the expression?'
 
 
 def generate_question_answer():
     signs = ['-', '+', '*']
     sign = random.choice(signs)
-
-    UPPER_BOUND = 1
-    LOWER_BOUND = 10
     operand_1 = random.randint(UPPER_BOUND, LOWER_BOUND)
     operand_2 = random.randint(UPPER_BOUND, LOWER_BOUND)
 
