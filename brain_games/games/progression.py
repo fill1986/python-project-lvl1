@@ -27,11 +27,11 @@ def generate_progression():
     )
 
 
-def get_question(list_progression: list(), lost_position_progression: int)->str:
-    list_progression[lost_position_progression] = '..'
-    list_progression = ' '.join(list_progression)
+def get_question(progression: list(), lost_position_progression: int) -> str:
+    progression[lost_position_progression] = '..'
+    progression = ' '.join(progression)
 
-    return list_progression
+    return progression
 
 
 def generate_question_answer():
