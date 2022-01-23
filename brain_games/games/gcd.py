@@ -15,6 +15,10 @@ def calculate_gcd(value_1, value_2):
 
 
 def generate_question_answer():
+    '''
+    value_1, value_2 в константы на уровень модуля не выношу,
+    тк на каждом шагу нужно генерить новое значение
+     '''
     value_1 = random.randint(LOWER_BOUND, UPPER_BOUND)
     value_2 = random.randint(LOWER_BOUND, UPPER_BOUND)
     answer = calculate_gcd(value_1, value_2)
