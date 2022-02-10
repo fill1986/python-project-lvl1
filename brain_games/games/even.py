@@ -1,7 +1,7 @@
 import random
 
-FIRST_VALUE_RANGE = 1
-SECOND_VALUE_RANGE = 100
+LOWER_BOUND = 1
+UPPER_BOUND = 100
 GAME_RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
@@ -10,6 +10,6 @@ def is_even(value):
 
 
 def generate_question_answer():
-    quetion = random.randint(FIRST_VALUE_RANGE, SECOND_VALUE_RANGE)
+    quetion = random.randint(LOWER_BOUND, UPPER_BOUND)
     answer = 'yes' if is_even(quetion) else 'no'
     return quetion, answer

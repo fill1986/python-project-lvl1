@@ -7,37 +7,32 @@ GAME_RULES = 'What number is missing in the progression?'
 
 def get_progression(first_member, difference, length):
     progression = []
-    member_progression = first_member
+    member = first_member
 
-    for n in range(PROGRESSION_LENGTH):
-        progression.append(str(member_progression))
-        member_progression += difference
+    for n in range(length):
+        progression.append(str(member))
+        member += difference
 
     return progression
 
 
-def generate_progression():
-    first_member_progression = random.randint(1, 10)
-    difference_progression = random.randint(1, 10)
-
-    return get_progression(
-        first_member_progression,
-        difference_progression,
-        PROGRESSION_LENGTH
-    )
-
-
-def get_question(progression: list(), lost_position_progression: int) -> str:
-    progression[lost_position_progression] = '..'
+def get_question(progression, lost_position):
+    progression[lost_position] = '..'
     progression = ' '.join(progression)
 
     return progression
 
 
 def generate_question_answer():
-    lost_position_progression = random.randint(1, PROGRESSION_LENGTH - 1)
-    progression_list = generate_progression()
-    answer = progression_list[lost_position_progression]
-    question = get_question(progression_list, lost_position_progression)
+    first_member = random.randint(1, 10)
+    difference = random.randint(1, 10)
+    lost_position: int = random.randint(1, PROGRESSION_LENGTH - 1)
+    progression: list[int] = get_progression(
+        first_member,
+        difference,
+        PROGRESSION_LENGTH
+    )
+    answer = progression[lost_position]
+    question = get_question(progression, lost_position)
 
     return question, answer
