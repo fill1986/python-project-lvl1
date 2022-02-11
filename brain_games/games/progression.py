@@ -1,7 +1,10 @@
 import random
+from typing import List
 
 
 PROGRESSION_LENGTH = 10
+LOWER_BOUND = 1
+UPPER_BOUND = 10
 GAME_RULES = 'What number is missing in the progression?'
 
 
@@ -24,10 +27,10 @@ def get_question(progression, lost_position):
 
 
 def generate_question_answer():
-    first_member = random.randint(1, 10)
-    difference = random.randint(1, 10)
+    first_member = random.randint(LOWER_BOUND, UPPER_BOUND)
+    difference = random.randint(LOWER_BOUND, UPPER_BOUND)
     lost_position: int = random.randint(1, PROGRESSION_LENGTH - 1)
-    progression: list[int] = get_progression(
+    progression: List[str] = get_progression(
         first_member,
         difference,
         PROGRESSION_LENGTH
